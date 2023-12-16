@@ -62,6 +62,7 @@
         </div>
       </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         document.addEventListener("DOMContentLoaded", ()=>{
             function $(id) {return document.querySelector(id)}
@@ -80,7 +81,18 @@
                     .catch(e=>{console.error(e)})
             })()
 
-
+            function alertar(mensaje, nSegundos = 1){
+              Swal.fire({
+                icon: 'info',
+                title: 'Empleado',
+                text: mensaje,
+                showConfirmButton: false,
+                timer: (nSegundos*1000),
+                timerProgressBar: true,
+                toast: true,
+                position: 'top-end'
+              })
+            }
 
             $("#formEmpleado").addEventListener("submit", (event)=>{
                 event.preventDefault();
@@ -103,6 +115,7 @@
                     })
                       .then(respuesta=>respuesta.json())
                       .then(datos => {
+                        alertar("Registro completado", 2)
                         if(datos.idempleado>0){console.log("asdasdasds")}
 
                         
