@@ -116,9 +116,7 @@
                       .then(respuesta=>respuesta.json())
                       .then(datos => {
                         alertar("Registro completado", 2)
-                        if(datos.idempleado>0){console.log("asdasdasds")}
-
-                        
+                        if(datos.idempleado>0){console.log("asdasdasds")}  
                       })
                       .catch(e=>{console.error(e)})
                 }
