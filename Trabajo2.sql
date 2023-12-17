@@ -163,6 +163,8 @@ CREATE PROCEDURE spu_registrar_empleado
 BEGIN
 	INSERT INTO empleados (idsede, apellidos, nombres, nrodocumento, fechanac, telefono) VALUES
     (_idsede, _apellidos, _nombres, _nrodocumento, _fechanac, _telefono);
+
+    SELECT  @@last_insert_id 'idempleado';
 END $$
 
 CALL spu_registrar_empleado (2, 'Diaz Rosales', 'Roberto Juan', '89904567', '2000-02-12', '956789345');
