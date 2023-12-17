@@ -114,9 +114,9 @@
                         body: parametros
                     })
                       .then(respuesta=>respuesta.json())
-                      .then(datos => {
-                        alertar("Registro completado", 2)
-                        if(datos.idempleado>0){console.log("asdasdasds")}  
+                      .then(datos => { 
+                        if(datos.idempleado>0){alertar("Registrado",2)}
+                         
                       })
                       .catch(e=>{console.error(e)})
                 }
